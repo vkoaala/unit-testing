@@ -1,6 +1,6 @@
 <?php
 
-namespace vkoaala\Test;
+namespace vkoaala\tests;
 
 use PHPUnit\Framework\TestCase;
 
