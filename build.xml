@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="test" default="build">
-    <target name="build" depends="prepare,lint,phpunit,-check-failure"/>
+    <target name="build" depends="prepare,lint,pdepend,phpunit,-check-failure"/>
 
     <target name="clean" unless="clean.done" description="Cleanup build artifacts">
         <delete dir="${basedir}/build/api"/>
@@ -43,7 +43,15 @@
             </fileset>
         </apply>
     </target>
-
+    
+    <target name="pdepend" depends="prepare" description="Calculate software metrics using PHP_Depend">
+        <exec executable="${basedir}/build/tools/pdepend.phar" taskname="pdepend">
+            <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml"/>
+            <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg"/>
+            <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg"/>
+            <arg path="${basedir}/src"/>
+        </exec>
+    </target>
    
     <target name="phpunit" depends="prepare" description="Run unit tests with PHPUnit">
         <exec executable="${basedir}/build/tools/phpunit.phar" resultproperty="result.phpunit" taskname="phpunit">
