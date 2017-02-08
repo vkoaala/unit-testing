@@ -1,8 +1,10 @@
 <?php
 
-namespace phpUnitTutorial\Test;
+namespace vkoaala\Test;
 
-class easytest extends \PHPUnit_Framework_TestCase
+use PHPUnit\Framework\TestCase;
+
+class easytest extends \TestCase
 {
     public function testTrueIsTrue()
 	{
