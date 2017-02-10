@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-require __DIR__ . '/../src/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $template  = file_get_contents(__DIR__ . '/child-class.tpl');
 $class     = new ReflectionClass('SebastianBergmann\Money\Currency');
