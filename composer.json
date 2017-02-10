@@ -17,6 +17,7 @@
     },
     "autoload": {
         "classmap": [
+            "vendor/autoload.php",
             "vendor/"
         ]
     },
