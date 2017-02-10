@@ -23,8 +23,8 @@
 
         <exec executable="${basedir}/build/tools/phpab.phar" taskname="generate-code">
             <arg value="--output"/>
-            <arg path="src/autoload.php"/>
-            <arg path="src"/>
+            <arg path="vendor/autoload.php"/>
+            <arg path="vendor"/>
         </exec>
     </target>
 
