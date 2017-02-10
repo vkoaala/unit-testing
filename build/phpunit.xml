@@ -11,7 +11,7 @@
          forceCoversAnnotation="true"
          verbose="true">
     <testsuite name="Money">
-        <directory suffix="Test.php">../tests</directory>
+        <directory suffix="Test.php">../tests/easytest.php</directory>
     </testsuite>
 
     <logging>
